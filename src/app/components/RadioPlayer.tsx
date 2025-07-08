@@ -32,7 +32,7 @@ export default function RadioPlayer() {
         const poll = async () => {
             try {
                 const res = await fetch("/api/streaminfo");
-                const { listeners, dj } = await res.json();
+                const { listeners } = await res.json();
                 setListeners(listeners);
             } catch {
                 /* silencio */
