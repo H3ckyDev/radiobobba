@@ -8,16 +8,16 @@ export default function LoginButton() {
   if (session) {
     return (
       <button
-        className="rounded-xl bg-primary px-4 py-2 text-white hover:opacity-90"
+        className="rounded-xl cursor-pointer bg-primary px-4 py-2 text-white hover:opacity-90"
         onClick={() => signOut()}
       >
-        👋 Cerrar sesión
+        Cerrar sesión
       </button>
     );
   }
   return (
     <button
-      className="rounded-xl bg-primary px-4 py-2 text-white hover:opacity-90"
+      className="rounded-xl cursor-pointer bg-primary px-4 py-2 text-white hover:opacity-90"
       onClick={() => signIn("discord")}
     >
       Iniciar sesión con Discord

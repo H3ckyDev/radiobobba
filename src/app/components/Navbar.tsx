@@ -1,9 +1,11 @@
+import Link from "next/link";
+import Image from "next/image";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/authOptions";
-import Link from "next/link";
 import LoginButton from "./LoginButton";
 
 export default async function NavBar() {
+
     const session = await getServerSession(authOptions);
 
     return (
@@ -11,11 +13,10 @@ export default async function NavBar() {
             <nav className="mx-auto flex max-w-6xl items-center justify-between p-4">
                 {/* Logo / Home */}
                 <Link href="/" className="text-2xl font-extrabold text-white">
-                    🎙️ RadioBobba
+                    {' '}
                 </Link>
-
                 {/* Links públicos */}
-                <ul className="flex gap-6 text-white">
+                {/* <ul className="flex gap-6 text-white">
                     <li>
                         <Link href="/blog" className="hover:text-primary">
                             Blog
@@ -26,7 +27,7 @@ export default async function NavBar() {
                             Equipo
                         </Link>
                     </li>
-                </ul>
+                </ul> */}
 
                 {/* Sesión */}
                 <div className="flex items-center gap-4">
@@ -39,9 +40,11 @@ export default async function NavBar() {
                                 )}
                             </span>
                             {session.user.image && (
-                                <img
+                                <Image
                                     src={session.user.image}
                                     alt="avatar"
+                                    width={32}
+                                    height={32}
                                     className="h-8 w-8 rounded-full"
                                 />
                             )}

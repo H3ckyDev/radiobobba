@@ -12,6 +12,7 @@ const STREAM_URL = "https://server2.ejeserver.com:7012/stream";
 const LS_KEY = "radiobobba-volume";
 
 export default function RadioPlayer() {
+    
     /* ---------- refs & state ---------- */
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const [playing, setPlaying] = useState(true);
