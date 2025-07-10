@@ -27,7 +27,8 @@ export default function RadioPlayer() {
     useEffect(() => {
         const audio = audioRef.current!;
         audio.volume = volume;
-        audio.play().catch(() => setPlaying(false)); // por si el navegador bloquea autoplay
+        audio.play().finally(() => setPlaying(true))
+        .catch(() => setPlaying(false)); // por si el navegador bloquea autoplay
 
         /* Poll oyentes cada 20 s */
         const poll = async () => {
